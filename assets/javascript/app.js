@@ -20,13 +20,28 @@ var time = "";
 var frequency = "";
 var trainTotal=0;
 // var currentTime = moment#toNow;
-var currentTime = moment().format("MM/DD/YYYY");
+// var currentTime = moment().format("MM/DD/YYYY");
+
 
 //Need to create funtions to append data that has been submitted
 database.ref().on("child_added", function(snapshot){
     trainTotal++;
 
 
+  var firstTrain = moment(snapshot.val().time, "hh:mm").subtract(1, "years");
+
+  var diffTime = moment().diff(moment(firstTrain), "minutes");
+
+  var delta =diffTime%snapshot.val().frequency
+
+  var minAway = snapshot.val().frequency - delta;
+
+  var nextTrain = moment().add(minAway, "minutes");
+
+  nextTrain = moment(nextTrain).format("hh:mm");
+
+
+    console.log(nextTrain);
     console.log(snapshot);
     console.log(snapshot.val());
     $(".info-table").append($("<tbody>").append($("<tr>")).attr("value", trainTotal).attr("class", "train" + trainTotal));
@@ -38,14 +53,12 @@ $(".train" + trainTotal).append($("<td>").text(snapshot.val().name));
 $(".train" + trainTotal).append($("<td>").text(snapshot.val().destination));
 
 $(".train" + trainTotal).append($("<td>").text(snapshot.val().frequency));
-// //next arrival
-// $(".train" + trainTotal).append($("<td>").text(xxxx));
-// //minutes away
-// $(".train" + trainTotal).append($("<td>").text(snapshot.val().xxxx));
+//next arrival
+$(".train" + trainTotal).append($("<td>").text(nextTrain));
+//minutes away
+$(".train" + trainTotal).append($("<td>").text(minAway));
 
-
-
-})
+});
 
 // function display(){
 //   $(".info-table").append($("<tbody>").append($("<tr>")))
@@ -70,7 +83,8 @@ database.ref().push({
     name: name,
     destination: destination,
     time: time,
-    frequency: frequency
+    frequency: frequency,
+    dateInput: firebase.database.ServerValue.TIMESTAMP
 })
 console.log(name);
 }
