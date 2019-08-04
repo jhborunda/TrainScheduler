@@ -37,13 +37,13 @@ $(".train" + trainTotal).append($("<td>").text(snapshot.val().name));
 
 $(".train" + trainTotal).append($("<td>").text(snapshot.val().destination));
 
-$(".train" + trainTotal).append($("<td>").text(snapshot.val().time));
+$(".train" + trainTotal).append($("<td>").text(snapshot.val().frequency));
+// //next arrival
+// $(".train" + trainTotal).append($("<td>").text(xxxx));
+// //minutes away
+// $(".train" + trainTotal).append($("<td>").text(snapshot.val().xxxx));
 
-$(".train" + trainTotal).append($("<td>").text(months));
 
-$(".train" + trainTotal).append($("<td>").text(snapshot.val().rate));
-
-$(".train" + trainTotal).append($("<td>").text(months * snapshot.val().rate));
 
 })
 
