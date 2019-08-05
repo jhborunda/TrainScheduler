@@ -1,0 +1,39 @@
+body {
+    background-color: gray;
+    color: black;
+}
+
+.jumbotron {
+    background-color: gray;
+    color: black;
+    border-bottom: 1px solid red;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-style,
+.data-container {
+    background-color: gray;
+    color: white;
+    /* text-align: center; */
+
+}
+
+#inputName,
+#inputDestination,
+#inputTime,
+#inputFrequency {
+    background-color: rgb(206, 161, 161);
+    color: white;
+
+}
+
+#submit {
+    margin-top: 20px;
+}
+
+label {
+    margin-bottom: 2px;
+    margin-top: 15px;
+}

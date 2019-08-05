@@ -12,17 +12,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    </head>
 
 <body>
     <div class="jumbotron">
         <h1 class="display-3">Any Time is Train Time</h1>
-        <p class="lead">all aboard!!!!</p>
+
     </div>
     <!-- //container for schedule -->
     <div class="container">
         <div class="panel panel-default data-container">
-            <div class="panel-body ">Current Train Schedule</div>
+            <div class="panel-body ">
+                <h3>Current Train Schedule</h3></div>
             <table class="table table-style info-table">
                 <thead>
                     <tr>
@@ -46,7 +49,8 @@
         </div>
         <!-- //container for input/panel  -->
         <div class="panel panel-default input">
-            <div class="panel-body">Add Train</div>
+            <div class="panel-body">
+                <h5>Add Train</h5></div>
             <div class="form-group">
                 <label for="">Train Name</label>
                 <input type="name" class="form-control" name="" id="inputName" aria-describedby="emailHelpId"
@@ -55,7 +59,7 @@
                 <input type="destination" class="form-control" name="" id="inputDestination"
                     aria-describedby="emailHelpId" placeholder="The North Pole">
                 <label for="">First Train Time (HH:MM - military time)</label>
-                <input type="Time" class="form-control" name="" id="inputTime" aria-describedby="emailHelpId"
+                <input type="Time" class="form-control"  data-date-format="HH:mm" name="" id="inputTime" aria-describedby="emailHelpId"
                     placeholder="12:00">
                 <label for="">Frequency (min)</label>
                 <input type="frequency" class="form-control" name="" id="inputFrequency" aria-describedby="emailHelpId"

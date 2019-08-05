@@ -19,8 +19,8 @@ var destination = "";
 var time = "";
 var frequency = "";
 var trainTotal=0;
-// var currentTime = moment#toNow;
-// var currentTime = moment().format("MM/DD/YYYY");
+
+
 
 
 //Need to create funtions to append data that has been submitted
@@ -28,7 +28,7 @@ database.ref().on("child_added", function(snapshot){
     trainTotal++;
 
 
-  var firstTrain = moment(snapshot.val().time, "hh:mm").subtract(1, "years");
+  var firstTrain = moment(snapshot.val().time, "HH:mm").subtract(1, "years");
 
   var diffTime = moment().diff(moment(firstTrain), "minutes");
 
@@ -38,7 +38,7 @@ database.ref().on("child_added", function(snapshot){
 
   var nextTrain = moment().add(minAway, "minutes");
 
-  nextTrain = moment(nextTrain).format("hh:mm");
+  nextTrain = moment(nextTrain).format("HH:mm");
 
 
     console.log(nextTrain);
@@ -60,10 +60,6 @@ $(".train" + trainTotal).append($("<td>").text(minAway));
 
 });
 
-// function display(){
-//   $(".info-table").append($("<tbody>").append($("<tr>")))
-//   $("")
-// }
 
 
 
